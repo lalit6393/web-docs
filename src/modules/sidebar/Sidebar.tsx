@@ -1,6 +1,6 @@
 'use client'
 import { Mail, UserRound, UsersRound } from 'lucide-react';
-import Link from 'next/link'
+import Link from "@/modules/link/Link";
 import React, { useState, useEffect, FormEvent } from 'react'
 import { MdEdit, MdOutlineHistory } from 'react-icons/md';
 

@@ -4,7 +4,7 @@ export async function editDoc({
     documentId,
     content
 }: {
-    documentId : string,
+    documentId: string,
     content: string | null
 }) {
 
@@ -16,7 +16,9 @@ export async function editDoc({
         documentId
     }
 
-    const response = await fetch(`http://localhost:3000/document/${documentId}`, {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    const response = await fetch(`${baseUrl}/document/${documentId}`, {
         method: 'PUT',
         headers: {
             authorization: `Bearer ${token}`,

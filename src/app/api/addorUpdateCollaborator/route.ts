@@ -7,7 +7,9 @@ export async function POST(req: Request) {
         const token = cookieStore.get('token')?.value || '';
         const data = await req.json();
 
-        const res = await fetch('http://localhost:3000/document/collaborator', {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+        const res = await fetch(`${baseUrl}/document/collaborator`, {
             method: 'POST',
             headers: {
                 authorization: `Bearer ${token}`,

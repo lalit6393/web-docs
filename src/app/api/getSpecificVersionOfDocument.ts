@@ -4,7 +4,7 @@ export async function getSpecificVersionOfDocument({ documentId, version }: { do
 
     const cookieStore = await cookies();
     const token = cookieStore.get('token')?.value || '';
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
     const response = await fetch(`${baseUrl}/document/${documentId}/version/${version}`, {
         method: 'GET',

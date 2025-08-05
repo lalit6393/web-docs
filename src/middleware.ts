@@ -5,12 +5,16 @@ import type { NextRequest } from "next/server";
 export default async function middleware(request: NextRequest) {
   const token = request.cookies.get('token') || '';
 
-  if(!token) 
+  if (!token && request.nextUrl.pathname.startsWith('/documents'))
     return NextResponse.redirect(new URL('/login', request.url));
-    // Middleware logic
-    return NextResponse.next();
+
+  if (token && (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup')) {
+    return NextResponse.redirect(new URL('/documents', request.url));
+  }
+  // Middleware logic
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/documents/:path*'],
+  matcher: ['/documents/:path*', '/login', '/signup'],
 }

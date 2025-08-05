@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from 'next/link';
+import Link from "@/modules/link/Link";
 import { getDocuments } from '@/app/api/getDocumentById';
 import Profile from '@/modules/profile/Profile';
+import { Plus } from 'lucide-react';
 
 const Documents = async () => {
 
@@ -37,6 +38,10 @@ const Documents = async () => {
                         </Link>
                     })
                 }
+                <Link href={`/documents/create`} className='flex flex-col justify-center items-center w-[16rem] h-[20rem] border border-slate-200 hover:border-blue-700 rounded-2xl'>
+                    <Plus className='w-10 h-10'/>
+                    <p className='text-lg'>Create New</p>
+                </Link>
             </div>
         </div>
     )

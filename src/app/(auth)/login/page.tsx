@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link';
+import Link from "@/modules/link/Link";
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
@@ -69,7 +69,7 @@ const Login = () => {
                 <div>
                     <button className='py-2 px-4 bg-blue-700 text-slate-50 rounded-md hover:bg-blue-800 cursor-pointer' type='submit'>{loading ? 'Logging in...' : 'Login'}</button>
                 </div>
-                <p>Create Account? <Link href='/signup'>Signup</Link></p>
+                <p className='text-sm'>Create Account? <Link href='/signup' className='text-blue-700 underline'>Signup</Link></p>
             </form>
         </div>
     )

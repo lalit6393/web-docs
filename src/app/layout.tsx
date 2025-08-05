@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import LoadingIndicator from "@/modules/loader/loading";
 import { Inter } from 'next/font/google'
+import Transitions from "./context/loading/loadingLink";
+import Animate from "@/modules/transition/Animate";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,10 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased`}
-        >
-        <LoadingIndicator></LoadingIndicator>
-        {children}
+        className={`${inter.className} antialiased overflow-hidden`}
+      >
+        <Transitions>
+          <Animate>
+            {children}
+          </Animate>
+        </Transitions>
       </body>
     </html>
   );

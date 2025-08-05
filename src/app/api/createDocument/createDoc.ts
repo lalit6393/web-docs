@@ -19,7 +19,9 @@ export async function createDoc({
         description
     }
 
-    const response = await fetch('http://localhost:3000/document', {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    const response = await fetch(`${baseUrl}/document`, {
         method: 'POST',
         headers: {
             authorization: `Bearer ${token}`,

@@ -66,3 +66,29 @@ body {
   height: 100%;
   z-index: 9999;
 }
+
+.dot-carousel {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--foreground);
+  color: var(--foreground);
+  box-shadow: 9984px 0 0 0 var(--foreground), 9999px 0 0 0 var(--foreground), 10014px 0 0 0 var(--foreground);
+  animation: dot-carousel 1.5s infinite linear;
+}
+
+@keyframes dot-carousel {
+  0% {
+    box-shadow: 9984px 0 0 -1px var(--foreground), 9999px 0 0 1px var(--foreground), 10014px 0 0 -1px var(--foreground);
+  }
+
+  50% {
+    box-shadow: 10014px 0 0 -1px var(--foreground), 9984px 0 0 -1px var(--foreground), 9999px 0 0 1px var(--foreground);
+  }
+
+  100% {
+    box-shadow: 9999px 0 0 1px var(--foreground), 10014px 0 0 -1px var(--foreground), 9984px 0 0 -1px var(--foreground);
+  }
+}
