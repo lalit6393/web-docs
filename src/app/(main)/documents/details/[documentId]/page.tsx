@@ -25,10 +25,10 @@ const MyDoc = async ({
         <div className='flex flex-col w-full h-screen bg-slate-200 box-border'>
             <div className='px-8 py-4 pb-4 border-b-2 border-b-slate-300 box-border'>
                 <div className='flex justify-between items-center'>
-                    <h1 className='text-xl font-bold'>{data.data?.title ? data.data?.title : 'My Document'}</h1>
+                    <h1 className='text-lg font-semibold'>{data.data?.title ? data.data?.title : 'My Document'}</h1>
                     <Profile/>
                 </div>
-                <p>{data.data.description && data.data.description}</p>
+                <p className='text-sm sm:pr-[20rem]'>{data.data.description && data.data.description}</p>
             </div>
             <div className='relative flex flex-1 justify-center overflow-y-scroll overflow-x-hidden'>
                 {/* ...................sidebar.................... */}

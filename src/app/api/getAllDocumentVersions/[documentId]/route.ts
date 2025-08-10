@@ -1,10 +1,10 @@
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: { documentId: string} }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ documentId: string}> }) {
 
     try {
-        const { documentId } = params;
+        const { documentId } = await params;
         const searchParams = req.nextUrl.searchParams;
         const page = parseInt(searchParams.get("page") || "0");
         const cookieStore = await cookies();
@@ -21,7 +21,7 @@ export async function GET(req: NextRequest, { params }: { params: { documentId: 
         const res = await response.json();
 
         return Response.json(res);
-    } catch (err) {
+    } catch (_err) {
         return new Response('Internal Server Error', { status: 500 });
     }
 }

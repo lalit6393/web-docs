@@ -86,7 +86,7 @@ const Sidebar = ({ documentId, collaborators }: { documentId: string, collaborat
 
             fetchHistory();
         }
-    }, [history, page]);
+    }, [history, page, documentId]);
 
     return (
         <>
@@ -140,7 +140,7 @@ const Sidebar = ({ documentId, collaborators }: { documentId: string, collaborat
             <div className='flex absolute left-0 bottom-0 top-0 bg-slate-300 w-fit lg:w-[13rem] overflow-hidden z-10 border-r border-slate-400'>
                 <div className='flex flex-col p-2 flex-1 gap-2'>
                     <Link
-                        href={`?edit=true`}
+                        href={`/documents/details/${documentId}/edit`}
                         className='flex justify-center py-2 px-2 lg:px-4 w-full text-slate-50 lg:justify-start items-center bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-lg'
                     >
                         <MdEdit className='w-6 h-6' />

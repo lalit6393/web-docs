@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
         return Response.json(response)
 
-    } catch (error) {
+    } catch (_error) {
         return new Response('Internal Server Error', { status: 500 });
     }
 }

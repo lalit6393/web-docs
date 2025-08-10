@@ -16,7 +16,7 @@ const Documents = async () => {
     return (
         <div className='flex flex-col w-full px-8 py-4'>
             <div className='flex justify-between items-center'>
-                <h1 className='text-xl font-bold'>My Documents</h1>
+                <h1 className='text-xl font-semibold'>My Documents</h1>
                 <Profile />
             </div>
             <div className='flex flex-wrap w-full gap-4 py-4 text-slate-700'>

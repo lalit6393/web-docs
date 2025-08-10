@@ -18,7 +18,7 @@ export async function getUser() {
 
         return data;
 
-    } catch (error) {
+    } catch (_error) {
         return {status:'failed', err:'Server Error'}
     }
 }

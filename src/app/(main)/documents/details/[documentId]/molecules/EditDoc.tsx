@@ -3,7 +3,7 @@ import { useSearchParams } from 'next/navigation';
 import { MdCancel } from 'react-icons/md';
 import React from 'react'
 import Link from "@/modules/link/Link";
-import CreateDoc from '../../../create/page';
+import CreateDoc from '@/modules/createDoc/CreateDoc';
 
 const EditDoc = ({ initialContent, documentId }: { initialContent?: string | null, documentId?:string }) => {
 

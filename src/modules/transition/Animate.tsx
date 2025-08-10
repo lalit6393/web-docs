@@ -1,9 +1,9 @@
 "use client";
 
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useNavigationTransition, DELAY } from "@/app/context/loading/loadingLink";
+import { useNavigationTransition } from "@/app/context/loading/loadingLink";
 import Loader from "../loader/Loader";
 
 export default function Animate({ children }: PropsWithChildren) {
