@@ -24,7 +24,7 @@ export async function login(formData: any) {
         return data;
     }
 
-    cookieStore.set("token", data.token, { maxAge: 24 * 60 * 60, httpOnly: true });
+    cookieStore.set("token", data.token, { maxAge: 24 * 60 * 60, httpOnly: true, path: '/' });
 
     return data;
 

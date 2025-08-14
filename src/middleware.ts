@@ -5,6 +5,8 @@ import type { NextRequest } from "next/server";
 export default async function middleware(request: NextRequest) {
   const token = request.cookies.get('token') || '';
 
+  if(!token) console.log("token not found");
+  
   if (!token && request.nextUrl.pathname.startsWith('/documents'))
     return NextResponse.redirect(new URL('/login', request.url));
 

@@ -25,12 +25,14 @@ export default function Transitions({ children }: PropsWithChildren) {
   const navigate = (href?: string) => {
     start(async () => {
       if (href) {
-        await Promise.all([router.push(href), sleep(DELAY)]);
+        router.push(href);
       } else {
-        await Promise.all([router.back(), sleep(DELAY)]);
+        router.back();
       }
+      await sleep(DELAY);
     });
   };
+
 
   return (
     <Context.Provider value={{ pending, navigate }}>
