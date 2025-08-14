@@ -1,12 +1,12 @@
 'use client'
+import { useNavigationTransition } from "@/app/context/loading/loadingLink";
 import Link from "@/modules/link/Link";
 import { LockKeyhole, Mail } from "lucide-react";
-import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 const Login = () => {
 
-    const router = useRouter();
+    const { navigate } = useNavigationTransition();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -35,7 +35,7 @@ const Login = () => {
         setLoading(false);
         if (data.err) return setError(data.err);
 
-        router.push('/documents');
+        navigate('/documents');
     }
 
     return (
