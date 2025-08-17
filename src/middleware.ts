@@ -1,12 +1,13 @@
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // Example of default export
 export default async function middleware(request: NextRequest) {
-  const token = request.cookies.get('token') || '';
-
-  if(!token) console.log("token not found");
+  // console.log("token= ",request.cookies.get('token')?.value);
   
+  const token = (await cookies()).get('token')?.value
+
   if (!token && request.nextUrl.pathname.startsWith('/documents'))
     return NextResponse.redirect(new URL('/login', request.url));
 
