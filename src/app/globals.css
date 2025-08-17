@@ -16,6 +16,8 @@ html {
   height: 100%;
   width: 100%;
 }
+  
+
 
 body {
   height: 100%;
@@ -23,6 +25,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Inter, sans-serif;
+}
+
+.bg-custom{
+  background: linear-gradient(154deg, #E0F7A1, #fff);
 }
 
 /* pdf look page*/

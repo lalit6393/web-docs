@@ -8,7 +8,7 @@ const Login = () => {
     const [state, action, pending] = useActionState(login, undefined);
 
     return (
-        <div className='flex h-screen items-center w-full justify-center'>
+        <div className='flex h-screen items-center w-full justify-center p-4'>
             <form action={action} className='w-[24rem] flex flex-col p-8 border shadow-lg border-slate-200 rounded-4xl box-border gap-2'>
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-xl font-semibold">Sign in with email</h1>

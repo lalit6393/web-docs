@@ -1,4 +1,5 @@
 'use client'
+import Link from '@/modules/link/Link';
 import { Lock, Mail, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react'
@@ -80,17 +81,20 @@ const Signup = () => {
 
     return (
         <div className='flex w-full h-full justify-center items-center p-4'>
-            <form onSubmit={handleSubmit} className='w-full sm:w-[26rem] flex flex-col px-4 py-8 border-2 border-slate-400 rounded-xl box-border gap-2'>
-                <div className='pb-4'>
-                    <h1 className='text-3xl font-bold tracking-tight'>Sign Up</h1>
-                    <p className='text-sm'>Create your account to get started.</p>
+            <form onSubmit={handleSubmit} className='w-[24rem] flex flex-col p-8 border shadow-lg border-slate-200 rounded-4xl box-border gap-2'>
+                <div className="flex flex-col justify-center items-center">
+                    <h1 className="text-xl font-semibold">Create your account</h1>
+                    <p className="text-sm text-gray-400 text-center pt-2">
+                        It only takes a minute to join — and you will be ready to create, edit,
+                        and collaborate instantly.
+                    </p>
                 </div>
                 <div className='flex flex-col w-full gap-2'>
-                    <label htmlFor='name' className='text-sm'>Full Name <span className='text-red-700'>*</span></label>
+                    <label htmlFor='name' className='text-sm font-semibold'>Full Name <span className='text-red-700'>*</span></label>
                     <div className='relative'>
-                        <User className="text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+                        <User className="absolute text-slate-400 w-4 h-full left-3 top-0 bottom-0" />
                         <input
-                            className='w-full text-base pl-10 text-slate-500 px-2 py-[6px] border-2 border-slate-400 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500'
+                            className='text-sm w-full text-slate-500 bg-slate-100 px-2 py-[6px] pl-9 border-2 border-transparent rounded-xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-700'
                             type='text'
                             name='name'
                             id='name'
@@ -104,11 +108,11 @@ const Signup = () => {
                     }
                 </div>
                 <div className='flex flex-col w-full gap-2'>
-                    <label htmlFor='email' className='text-sm'>Email <span className='text-red-700'>*</span></label>
+                    <label htmlFor='email' className='text-sm font-semibold'>Email <span className='text-red-700'>*</span></label>
                     <div className='relative'>
-                        <Mail className="text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+                        <Mail className="absolute text-slate-400 w-4 h-full left-3 top-0 bottom-0" />
                         <input
-                            className='pl-10 w-full text-base text-slate-500 px-2 py-[6px] border-2 border-slate-400 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500'
+                            className='text-sm w-full text-slate-500 bg-slate-100 px-2 py-[6px] pl-9 border-2 border-transparent rounded-xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-700'
                             type='email'
                             name='email'
                             id='email'
@@ -121,11 +125,11 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className='flex flex-col w-full gap-2'>
-                    <label htmlFor='password' className='text-sm'>Password <span className='text-red-700'>*</span></label>
+                    <label htmlFor='password' className='text-sm font-semibold'>Password <span className='text-red-700'>*</span></label>
                     <div className='relative'>
-                        <Lock className="text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+                        <Lock className="absolute text-slate-400 w-4 h-full left-3 top-0 bottom-0" />
                         <input
-                            className='pl-10 w-full text-base text-slate-500 px-2 py-[6px] border-2 border-slate-400 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500'
+                            className='text-sm w-full text-slate-500 bg-slate-100 px-2 py-[6px] pl-9 border-2 border-transparent rounded-xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-700'
                             type='password'
                             name='password'
                             id='password'
@@ -138,11 +142,11 @@ const Signup = () => {
                     }
                 </div>
                 <div className='flex flex-col w-full gap-2'>
-                    <label htmlFor='confirmPassword' className='text-sm'>Confirm Password <span className='text-red-700'>*</span></label>
+                    <label htmlFor='confirmPassword' className='text-sm font-semibold'>Confirm Password <span className='text-red-700'>*</span></label>
                     <div className='relative'>
-                        <Lock className="text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 " />
+                        <Lock className="absolute text-slate-400 w-4 h-full left-3 top-0 bottom-0" />
                         <input
-                            className='pl-10 w-full text-base text-slate-500 px-2 py-[6px] border-2 border-slate-400 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500'
+                            className='text-sm w-full text-slate-500 bg-slate-100 px-2 py-[6px] pl-9 border-2 border-transparent rounded-xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-700'
                             type='password'
                             name='confirmPassword'
                             id='confirmPassword'
@@ -155,9 +159,9 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className='flex flex-col w-full gap-2'>
-                    <label htmlFor='dob' className='text-sm'>Date of birth (Optional)</label>
+                    <label htmlFor='dob' className='text-sm font-semibold'>Date of birth (Optional)</label>
                     <input
-                        className='text-base text-slate-500 px-2 py-[6px] border-2 border-slate-400 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500'
+                        className='text-sm w-full text-slate-500 bg-slate-100 px-2 py-[6px] pl-9 border-2 border-transparent rounded-xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-700'
                         type='date'
                         name='dob'
                         id='dob'
@@ -168,7 +172,8 @@ const Signup = () => {
                     {
                         err?.name === 'final' && <p className='text-red-700 text-sm'>{err.message}</p>
                     }
-                    <button className='w-full py-2 px-4 bg-blue-700 text-slate-50 rounded-md hover:bg-blue-800 cursor-pointer' type='submit'>{loading ? 'Signing in...' : 'Signup'}</button>
+                    <button className='py-2 px-4 bg-gray-700 text-sm text-slate-50 rounded-xl hover:bg-gray-900 cursor-pointer' type='submit'>{loading ? 'Signing in...' : 'Signup'}</button>
+                    <p className='text-sm'>Already have an account? <Link href='/login' className='text-blue-700 underline'>Login</Link></p>
                 </div>
             </form>
         </div>
